@@ -1,0 +1,9 @@
+http-client:
+  api:
+    json-place-holder:
+      base-url: https://jsonplaceholder.typicode.com
+      connect-timeout: 10
+      read-timeout: 10
+      logging-level: BODY
+server:
+  port: 8089
