@@ -1,7 +1,12 @@
 package com.marcosalarcon.retrofit.domain.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 
+@AllArgsConstructor
+@NoArgsConstructor
 public class PostResponseDTO implements Serializable {
 
     private Integer id;

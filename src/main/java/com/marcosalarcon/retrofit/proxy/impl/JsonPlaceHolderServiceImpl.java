@@ -1,5 +1,6 @@
 package com.marcosalarcon.retrofit.proxy.impl;
 
+import com.marcosalarcon.retrofit.domain.dto.CommentsResponseDTO;
 import com.marcosalarcon.retrofit.domain.dto.PostResponseDTO;
 import com.marcosalarcon.retrofit.proxy.api.JsonPlaceHolderApi;
 import com.marcosalarcon.retrofit.proxy.service.JsonPlaceHolderService;
@@ -23,4 +24,46 @@ public class JsonPlaceHolderServiceImpl implements JsonPlaceHolderService {
                 .execute()
                 .body();
     }
+
+    @Override
+    public PostResponseDTO getAllPostsById(int id) throws IOException {
+        return jsonPlaceHolderApiTwo.getAllPostsById(id)
+                .execute()
+                .body();
+    }
+
+    @Override
+    public List<CommentsResponseDTO> getAllPostsByIdComments(int id) throws IOException {
+        return jsonPlaceHolderApiTwo.getAllPostsByIdComments(id)
+                .execute()
+                .body();
+    }
+
+    @Override
+    public List<CommentsResponseDTO> getAllPostsCommentsById(int postId) throws IOException {
+        return jsonPlaceHolderApiTwo.getAllPostsCommentsById(postId)
+                .execute()
+                .body();
+    }
+
+    @Override
+    public PostResponseDTO addNewPosts(PostResponseDTO postResponseDTO) throws IOException {
+        return jsonPlaceHolderApiTwo.addNewPosts(postResponseDTO)
+                .execute()
+                .body();
+    }
+
+    @Override
+    public PostResponseDTO updatePostsById(int id) throws IOException {
+        return jsonPlaceHolderApiTwo.updatePostsById(id)
+                .execute()
+                .body();
+    }
+
+    @Override
+    public void deletePostsById(int id) throws IOException {
+        jsonPlaceHolderApiTwo.deletePostsById(id)
+                .execute();
+    }
+
 }
