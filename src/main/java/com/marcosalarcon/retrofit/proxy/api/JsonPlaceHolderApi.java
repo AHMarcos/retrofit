@@ -1,7 +1,7 @@
 package com.marcosalarcon.retrofit.proxy.api;
 
-import com.marcosalarcon.retrofit.domain.dto.CommentsResponseDTO;
-import com.marcosalarcon.retrofit.domain.dto.PostResponseDTO;
+import com.marcosalarcon.retrofit.dto.CommentsResponseDTO;
+import com.marcosalarcon.retrofit.dto.PostResponseDTO;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;

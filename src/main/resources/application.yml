@@ -5,5 +5,13 @@ http-client:
       connect-timeout: 10
       read-timeout: 10
       logging-level: BODY
+    validate-iban:
+      base-url: https://rest.sepatools.eu
+      connect-timeout: 10
+      read-timeout: 10
+      logging-level: BODY
 server:
   port: 8089
+iban-api:
+  username: global66_iban
+  password: ibanG66_81!

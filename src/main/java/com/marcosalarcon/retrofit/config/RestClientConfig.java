@@ -9,8 +9,10 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.util.StdDateFormat;
 import com.marcosalarcon.retrofit.config.endpoints.EndpointsConfig;
 import com.marcosalarcon.retrofit.proxy.api.JsonPlaceHolderApi;
+import com.marcosalarcon.retrofit.proxy.api.ValidateIbanApi;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import retrofit2.Retrofit;
@@ -21,11 +23,24 @@ import java.util.concurrent.TimeUnit;
 @Configuration
 public class RestClientConfig {
 
+    @Value("${iban-api.username}")
+    String username;
+
+    @Value("${iban-api.password}")
+    String password;
+
     @Bean
     JsonPlaceHolderApi jsonPlaceHolderApi(EndpointsConfig.Endpoint jsonPlaceHolderEndpoint) {
         return getRetrofitConfig(jsonPlaceHolderEndpoint)
                 .addConverterFactory(JacksonConverterFactory.create(getObjectMapper(new ObjectMapper()))).build()
                 .create(JsonPlaceHolderApi.class);
+    }
+
+    @Bean
+    ValidateIbanApi validateIbanApi(EndpointsConfig.Endpoint validateIbanEndpoint) {
+        return getRetrofitConfig(validateIbanEndpoint)
+                .addConverterFactory(JacksonConverterFactory.create(getObjectMapper(new ObjectMapper()))).build()
+                .create(ValidateIbanApi.class);
     }
 
     private Retrofit.Builder getRetrofitConfig(EndpointsConfig.Endpoint endpoint) {
@@ -43,6 +58,7 @@ public class RestClientConfig {
                 .readTimeout(readTimeout, TimeUnit.SECONDS)
                 .connectTimeout(connectTimeout, TimeUnit.SECONDS)
                 .addInterceptor(interceptor)
+                .addInterceptor(new BasicAuthInterceptor(username,password))
                 .build();
     }
 

@@ -1,4 +1,4 @@
-package com.marcosalarcon.retrofit.domain.dto;
+package com.marcosalarcon.retrofit.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;

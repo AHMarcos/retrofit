@@ -1,7 +1,7 @@
 package com.marcosalarcon.retrofit.controller;
 
-import com.marcosalarcon.retrofit.domain.dto.CommentsResponseDTO;
-import com.marcosalarcon.retrofit.domain.dto.PostResponseDTO;
+import com.marcosalarcon.retrofit.dto.CommentsResponseDTO;
+import com.marcosalarcon.retrofit.dto.PostResponseDTO;
 import com.marcosalarcon.retrofit.proxy.service.JsonPlaceHolderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;

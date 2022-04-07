@@ -1,7 +1,7 @@
 package com.marcosalarcon.retrofit.proxy.impl;
 
-import com.marcosalarcon.retrofit.domain.dto.CommentsResponseDTO;
-import com.marcosalarcon.retrofit.domain.dto.PostResponseDTO;
+import com.marcosalarcon.retrofit.dto.CommentsResponseDTO;
+import com.marcosalarcon.retrofit.dto.PostResponseDTO;
 import com.marcosalarcon.retrofit.proxy.api.JsonPlaceHolderApi;
 import com.marcosalarcon.retrofit.proxy.service.JsonPlaceHolderService;
 import lombok.RequiredArgsConstructor;

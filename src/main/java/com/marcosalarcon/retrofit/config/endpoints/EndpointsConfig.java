@@ -17,6 +17,12 @@ public class EndpointsConfig {
         return new Endpoint();
     }
 
+    @Bean
+    @ConfigurationProperties(prefix = "http-client.api.validate-iban")
+    public Endpoint validateIbanEndpoint() {
+        return new Endpoint();
+    }
+
     @Getter
     @Setter
     public static class Endpoint {
